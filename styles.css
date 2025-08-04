@@ -1,0 +1,23 @@
+#container {
+    border: solid 1px red;
+    max-width: 300px;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+#buttons {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 12px;
+}
+
+#screen {
+    border: solid 2px blue;
+}
+
+.button {
+    width: 60px;
+    height: 60px;
+    box-sizing: border-box;
+}
