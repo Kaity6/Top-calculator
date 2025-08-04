@@ -77,9 +77,11 @@ button0.addEventListener("click", function () {
     a ? b = 0 : b = null
 })
 
-// function calc() {
-//     if (b === !NaN)
-// }
+function calc() {
+    if (b) {
+        result = result + b
+    }
+}
 
 let plus = document.getElementById("plus")
 plus.addEventListener("click", () => {
@@ -87,4 +89,3 @@ plus.addEventListener("click", () => {
     calc()
 })
 
-console.log(9 === NaN)
