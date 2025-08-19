@@ -7,17 +7,17 @@ for (let i = 0; i < 10; i++) {
     madeButton.setAttribute("id", `button${i}`)
     buttons.appendChild(madeButton)
 }
+
 let result = 6;
 let storeCondition = false;
 let screen = document.getElementById("screen")
 screen.innerText = result
 
 
-buttons.addEventListener("click", () => {
-    screen.innerText = result;
-    storeCondition = false;
-    trigger()
-})
+// buttons.addEventListener("click", () => {
+//     screen.innerText = result;
+//     storeCondition = false;
+// })
 
 
 let AC = document.getElementById("AC")
@@ -71,30 +71,32 @@ button0.addEventListener("click", function () {
    result = 0
 })
 
+let previousResult;
+let operator;
+let newResult;
+let plus = document.getElementById("plus")
 
-function plusOperation() {
+plus.addEventListener("click", () => {
+    operation = "+"
     storeCondition = true;
-    return result
-}
+    console.log("meow")
+})
 
+buttons.addEventListener("click", () => {
+    previousResult = result;
+    screen.innerText = result;
+})
 
-plus = document.getElementById("plus");
-plus.addEventListener("click", plusOperation)
-
-
-function trigger () {
 if (storeCondition) {
-    let a = plusOpearation();
-    if (storeCondition = false) {
-        let b = result;
-        result = a + b
-    }
+    buttons.addEventListener("click", () => {
+        newResult = result
+        result = `${previousResult} ${operator} ${newResult}`
+        console.log(result)
+        storeCondition = false
+    })
+} else {
+    
+    previousResult = result;
+    screen.innerText = result;
+    
 }
-}
-
-
-let equal = document.getElementById("equal")
-function call () {
-    console.log(result)
-}
-equal.addEventListener("click", call)
